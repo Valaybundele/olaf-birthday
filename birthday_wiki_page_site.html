@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Birthday Wiki Page</title>
+  <style>
+    :root {
+      --bg: #fff8fb;
+      --card: #ffffff;
+      --text: #2d2433;
+      --muted: #6e6175;
+      --accent: #ff72a8;
+      --accent-2: #8c7bff;
+      --line: #ead9e5;
+      --shadow: 0 18px 40px rgba(79, 47, 78, 0.12);
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(255, 114, 168, 0.18), transparent 30%),
+        radial-gradient(circle at top right, rgba(140, 123, 255, 0.16), transparent 30%),
+        var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 32px 18px 64px;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 24px;
+      align-items: center;
+      margin-bottom: 24px;
+    }
+
+    .panel {
+      background: rgba(255,255,255,0.82);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255,255,255,0.8);
+      border-radius: 28px;
+      box-shadow: var(--shadow);
+      padding: 28px;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, rgba(255,114,168,0.15), rgba(140,123,255,0.15));
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      font-size: clamp(2.4rem, 4vw, 4.5rem);
+      line-height: 1.05;
+      margin: 14px 0 12px;
+    }
+
+    .subtitle {
+      font-size: 1.08rem;
+      color: var(--muted);
+      max-width: 60ch;
+    }
+
+    .button-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 22px;
+    }
+
+    .btn {
+      text-decoration: none;
+      padding: 12px 18px;
+      border-radius: 14px;
+      font-weight: 700;
+      transition: transform .18s ease, box-shadow .18s ease;
+      display: inline-block;
+    }
+
+    .btn:hover { transform: translateY(-2px); }
+    .btn.primary {
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      color: white;
+      box-shadow: 0 12px 24px rgba(140,123,255,0.25);
+    }
+    .btn.secondary {
+      background: white;
+      color: var(--text);
+      border: 1px solid var(--line);
+    }
+
+    .portrait {
+      width: 100%;
+      border-radius: 24px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.9);
+      box-shadow: var(--shadow);
+      background: linear-gradient(135deg, #ffd5e5, #ddd7ff);
+    }
+
+    .portrait img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+      aspect-ratio: 4/5;
+    }
+
+    .wiki {
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 24px;
+      margin-top: 28px;
+    }
+
+    .infobox h3, .section h2 {
+      margin-top: 0;
+    }
+
+    .infobox table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.96rem;
+    }
+
+    .infobox th, .infobox td {
+      text-align: left;
+      vertical-align: top;
+      padding: 10px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .infobox th {
+      width: 38%;
+      color: var(--muted);
+      font-weight: 600;
+    }
+
+    .section {
+      margin-bottom: 18px;
+      padding: 26px;
+    }
+
+    .section h2 {
+      font-size: 1.35rem;
+      margin-bottom: 12px;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin-top: 12px;
+    }
+
+    .gallery img {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      border-radius: 18px;
+      border: 1px solid var(--line);
+      background: #f7eef4;
+    }
+
+    .quote {
+      font-size: 1.08rem;
+      border-left: 4px solid var(--accent);
+      padding-left: 14px;
+      color: var(--muted);
+      margin: 16px 0;
+    }
+
+    .footer {
+      text-align: center;
+      color: var(--muted);
+      margin-top: 28px;
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 860px) {
+      .hero, .wiki {
+        grid-template-columns: 1fr;
+      }
+      .gallery {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <section class="hero">
+      <div class="panel">
+        <span class="badge">Birthday Special Edition</span>
+        <h1>The [Friend Name] Encyclopedia</h1>
+        <p class="subtitle">
+          A sweet, slightly dramatic, and completely unofficial wiki page celebrating one very iconic human.
+          Built as a birthday surprise with love, jokes, and suspiciously accurate lore.
+        </p>
+        <div class="button-row">
+          <a href="#wiki" class="btn primary">Open Wiki Page</a>
+          <a href="#gallery" class="btn secondary">See Memory Gallery</a>
+        </div>
+      </div>
+
+      <div class="portrait">
+        <img alt="Birthday portrait illustration" src="data:image/svg+xml;utf8,
+        <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 1000'>
+          <defs>
+            <linearGradient id='g' x1='0' y1='0' x2='1' y2='1'>
+              <stop offset='0%' stop-color='%23ffd7e6'/>
+              <stop offset='100%' stop-color='%23d8d4ff'/>
+            </linearGradient>
+          </defs>
+          <rect width='800' height='1000' fill='url(%23g)'/>
+          <circle cx='400' cy='300' r='120' fill='%23fff5fa'/>
+          <rect x='230' y='430' rx='140' ry='140' width='340' height='330' fill='%23fff5fa'/>
+          <circle cx='360' cy='285' r='10' fill='%233a2e40'/>
+          <circle cx='440' cy='285' r='10' fill='%233a2e40'/>
+          <path d='M355 350 Q400 385 445 350' fill='none' stroke='%23ff72a8' stroke-width='10' stroke-linecap='round'/>
+          <path d='M285 240 Q400 130 515 240' fill='none' stroke='%238c7bff' stroke-width='42' stroke-linecap='round'/>
+          <g fill='%23ffffff' opacity='0.85'>
+            <circle cx='120' cy='140' r='18'/><circle cx='690' cy='170' r='12'/><circle cx='650' cy='780' r='14'/><circle cx='180' cy='820' r='10'/>
+          </g>
+          <g fill='%23ff72a8' opacity='0.65'>
+            <circle cx='150' cy='210' r='8'/><circle cx='620' cy='260' r='9'/><circle cx='590' cy='840' r='7'/>
+          </g>
+        </svg>" />
+      </div>
+    </section>
+
+    <section class="wiki" id="wiki">
+      <aside class="panel infobox">
+        <h3>[Friend Name]</h3>
+        <p style="color: var(--muted); margin-top: -6px;">Icon • Legend • Birthday Person</p>
+        <table>
+          <tr><th>Born</th><td>[Birthdate]</td></tr>
+          <tr><th>Known for</th><td>[Inside joke / best trait]</td></tr>
+          <tr><th>Favorite color</th><td>[Color]</td></tr>
+          <tr><th>Favorite number</th><td>[Number]</td></tr>
+          <tr><th>Hobbies</th><td>[Hobby 1], [Hobby 2], [Hobby 3]</td></tr>
+          <tr><th>Status</th><td>Birthday icon in active service</td></tr>
+        </table>
+      </aside>
+
+      <main>
+        <article class="panel section">
+          <h2>Overview</h2>
+          <p>
+            <strong>[Friend Name]</strong> is best known for being effortlessly memorable, weirdly talented, and a consistent source of good energy.
+            Scholars describe them as a rare mix of chaos, kindness, style, and elite-level main-character behavior.
+          </p>
+          <p>
+            This page was created to commemorate their birthday and document their growing legacy in the fields of friendship, iconic reactions, and accidental comedy.
+          </p>
+        </article>
+
+        <article class="panel section">
+          <h2>Early Life and Education</h2>
+          <p>
+            From an early age, [Friend Name] showed unusual promise in the areas of [funny trait], [real talent], and making ordinary moments ten times more entertaining.
+            Later, they refined these abilities through years of experience, excellent taste, and spontaneous brilliance.
+          </p>
+        </article>
+
+        <article class="panel section">
+          <h2>Personality and Achievements</h2>
+          <p>
+            Experts and close friends agree that [Friend Name] excels at:
+          </p>
+          <ul>
+            <li>[Sweet trait or achievement]</li>
+            <li>[Funny habit or inside joke]</li>
+            <li>[Another genuine strength]</li>
+          </ul>
+          <p class="quote">“[Insert a quote they actually say a lot, or a line that sounds exactly like them.]”</p>
+        </article>
+
+        <article class="panel section" id="gallery">
+          <h2>Memory Gallery</h2>
+          <p>Replace these with your real photos, screenshots, or custom illustrations.</p>
+          <div class="gallery">
+            <img alt="Memory 1" src="data:image/svg+xml;utf8,
+            <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 600'>
+              <defs><linearGradient id='a' x1='0' y1='0' x2='1' y2='1'><stop offset='0%' stop-color='%23ffe0eb'/><stop offset='100%' stop-color='%23e7e1ff'/></linearGradient></defs>
+              <rect width='600' height='600' rx='40' fill='url(%23a)'/>
+              <circle cx='300' cy='210' r='95' fill='%23fff'/>
+              <rect x='180' y='320' width='240' height='140' rx='70' fill='%23fff'/>
+              <text x='300' y='540' text-anchor='middle' font-family='Arial' font-size='34' fill='%236e6175'>Photo / Memory 1</text>
+            </svg>" />
+            <img alt="Memory 2" src="data:image/svg+xml;utf8,
+            <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 600'>
+              <defs><linearGradient id='b' x1='0' y1='0' x2='1' y2='1'><stop offset='0%' stop-color='%23dff6ff'/><stop offset='100%' stop-color='%23ffe7f0'/></linearGradient></defs>
+              <rect width='600' height='600' rx='40' fill='url(%23b)'/>
+              <path d='M150 380 Q300 180 450 380' fill='none' stroke='%23fff' stroke-width='34' stroke-linecap='round'/>
+              <circle cx='220' cy='250' r='24' fill='%23fff'/><circle cx='380' cy='250' r='24' fill='%23fff'/>
+              <text x='300' y='540' text-anchor='middle' font-family='Arial' font-size='34' fill='%236e6175'>Photo / Memory 2</text>
+            </svg>" />
+            <img alt="Memory 3" src="data:image/svg+xml;utf8,
+            <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 600'>
+              <defs><linearGradient id='c' x1='0' y1='0' x2='1' y2='1'><stop offset='0%' stop-color='%23ffe8cf'/><stop offset='100%' stop-color='%23f0deff'/></linearGradient></defs>
+              <rect width='600' height='600' rx='40' fill='url(%23c)'/>
+              <g fill='%23fff'>
+                <circle cx='220' cy='220' r='70'/><circle cx='370' cy='250' r='90'/><rect x='170' y='330' width='250' height='90' rx='30'/>
+              </g>
+              <text x='300' y='540' text-anchor='middle' font-family='Arial' font-size='34' fill='%236e6175'>Photo / Memory 3</text>
+            </svg>" />
+          </div>
+        </article>
+
+        <article class="panel section">
+          <h2>Legacy</h2>
+          <p>
+            Although historians are still documenting the full extent of [Friend Name]’s greatness, the current evidence strongly suggests that they are deeply appreciated,
+            highly unforgettable, and absolutely deserving of the best birthday ever.
+          </p>
+        </article>
+      </main>
+    </section>
+
+    <p class="footer">Made with affection, dramatic wording, and birthday energy.</p>
+  </div>
+</body>
+</html>
